@@ -18,7 +18,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/iban/create', [\App\Models\User::class, 'storeIban']);
 
     Route::post('/pay/transfer_to', [\App\Http\Controllers\PaymentApiController::class, 'transferTo']);
-    Route::post('/pay/transactions/{uuid}', [\App\Http\Controllers\PaymentApiController::class, 'transactions']);
+    Route::get('/pay/transactions/{uuid}', [\App\Http\Controllers\PaymentApiController::class, 'transactions']);
 
 });
 
